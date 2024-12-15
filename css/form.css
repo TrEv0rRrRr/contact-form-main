@@ -115,9 +115,10 @@ textarea {
 .labelInputSelect::before {
   content: "";
   display: inline-block;
-  width: 15px;
-  height: 15px;
+  width: 0.875rem;
+  height: 0.875rem;
   background-size: contain;
+  background-repeat: no-repeat;
   position: absolute;
   left: -29px;
 }
