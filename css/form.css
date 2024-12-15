@@ -61,6 +61,11 @@ textarea {
 #form__radio-group {
   display: flex;
   gap: 15px;
+  border: none;
+}
+
+legend {
+  margin-bottom: 10px;
 }
 
 .label {

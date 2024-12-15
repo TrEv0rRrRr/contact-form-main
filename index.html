@@ -35,54 +35,61 @@
       <div class="form__group">
         <div class="form__group1">
           <label class="label" for="name">First Name *</label>
-          <input class="input" type="text" id="name" name="name" placeholder="Jhon" autocomplete="name">
-          <p class="form__error" id="nameErrorContainer"></p>
+          <input class="input" type="text" id="name" name="name" placeholder="Jhon" autocomplete="name"
+            aria-required="true" aria-describedby="nameErrorContainer">
+          <p class="form__error" id="nameErrorContainer" aria-live="polite"></p>
         </div>
         <div class="form__group2">
           <label class="label" for="lastname">Last Name *</label>
-          <input autocomplete="name" class="input" type="text" id="lastname" name="lastname" placeholder="Doe">
-          <p class="form__error" id="lastNameErrorContainer"></p>
+          <input autocomplete="name" class="input" type="text" id="lastname" name="lastname" placeholder="Doe"
+            aria-required="true" aria-describedby="lastNameErrorContainer">
+          <p class="form__error" id="lastNameErrorContainer" aria-live="polite"></p>
         </div>
       </div>
 
       <div class="form__group">
         <label class="label" for="email">Email Address *</label>
-        <input autocomplete="email" class="input" type="email" id="email" name="email" placeholder="example@gmail.com">
-        <p class="form__error" id="emailErrorContainer"></p>
+        <input autocomplete="email" class="input" type="email" id="email" name="email" placeholder="example@gmail.com"
+          aria-required="true" aria-describedby="emailErrorContainer">
+        <p class="form__error" id="emailErrorContainer" aria-live="polite"></p>
       </div>
 
       <div class=" form__group">
-        <p class="label">Query Type *</p>
 
-        <div id="form__radio-group">
+        <fieldset id="form__radio-group" aria-required="true" aria-describedby="queryErrorContainer">
+          <legend class="label">Query Type *</legend>
+
           <div class="form__radio">
             <input class="inputRadio" type="radio" id="general" name="query" value="general">
             <label class="label labelInputSelect" for="general">General Enquiry</label>
           </div>
+
           <div class="form__radio">
             <input class="inputRadio" type="radio" id="support" name="query" value="support">
             <label class="label labelInputSelect" for="support">Support Request</label>
           </div>
-        </div>
+        </fieldset>
 
-        <p class="form__error" id="queryErrorContainer"></p>
+        <p class="form__error" id="queryErrorContainer" aria-live="polite"></p>
       </div>
 
       <div class="form__group">
         <label class="label" for="message">Message *</label>
-        <textarea class="input" id="message" name="message" placeholder="How can we help you?"></textarea>
-        <p class="form__error" id="messageErrorContainer"></p>
+        <textarea class="input" id="message" name="message" placeholder="How can we help you?" aria-required="true"
+          aria-describedby="messageErrorContainer"></textarea>
+        <p class="form__error" id="messageErrorContainer" aria-live="polite"></p>
       </div>
 
       <div class="form__group">
         <div>
-          <input type="checkbox" name="consent" id="consent">
+          <input type="checkbox" name="consent" id="consent" aria-required="true"
+            aria-describedby="consentErrorContainer">
           <label class="label labelInputSelect" for="consent">I consent to being contacted by the team *</label>
         </div>
-        <p class="form__error" id="consentErrorContainer"></p>
+        <p class="form__error" id="consentErrorContainer" aria-live="polite"></p>
       </div>
 
-      <button id="submitButton">Submit</button>
+      <button type="submit" id="submitButton">Submit</button>
     </form>
   </div>
   <script>
