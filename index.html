@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  <title>Frontend Mentor | Contact form</title>
+  <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+
+<body>
+
+  <div class="successState animate__animated">
+    <div class="successState__container">
+
+      <div class="successState_title_container">
+        <img class="successState_title_img" src="./assets/icon-success-check.svg" alt="">
+        <p class="successState__title_title">Message Sent!</p>
+      </div>
+
+      <p class="successState__text">
+        Thanks for completing the form. We'll be in touch soon!
+      </p>
+
+    </div>
+  </div>
+
+  <div class="container">
+    <h1 class="container__title">Contact Us</h1>
+    <form action="#" id="form">
+
+      <div class="form__group">
+        <div class="form__group1">
+          <label class="label" for="name">First Name *</label>
+          <input class="input" type="text" id="name" name="name" placeholder="Jhon" autocomplete="name">
+          <p class="form__error" id="nameErrorContainer"></p>
+        </div>
+        <div class="form__group2">
+          <label class="label" for="lastname">Last Name *</label>
+          <input autocomplete="name" class="input" type="text" id="lastname" name="lastname" placeholder="Doe">
+          <p class="form__error" id="lastNameErrorContainer"></p>
+        </div>
+      </div>
+
+      <div class="form__group">
+        <label class="label" for="email">Email Address *</label>
+        <input autocomplete="email" class="input" type="email" id="email" name="email" placeholder="example@gmail.com">
+        <p class="form__error" id="emailErrorContainer"></p>
+      </div>
+
+      <div class=" form__group">
+        <p class="label">Query Type *</p>
+
+        <div id="form__radio-group">
+          <div class="form__radio">
+            <input class="inputRadio" type="radio" id="general" name="query" value="general">
+            <label class="label labelInputSelect" for="general">General Enquiry</label>
+          </div>
+          <div class="form__radio">
+            <input class="inputRadio" type="radio" id="support" name="query" value="support">
+            <label class="label labelInputSelect" for="support">Support Request</label>
+          </div>
+        </div>
+
+        <p class="form__error" id="queryErrorContainer"></p>
+      </div>
+
+      <div class="form__group">
+        <label class="label" for="message">Message *</label>
+        <textarea class="input" id="message" name="message" placeholder="How can we help you?"></textarea>
+        <p class="form__error" id="messageErrorContainer"></p>
+      </div>
+
+      <div class="form__group">
+        <div>
+          <input type="checkbox" name="consent" id="consent">
+          <label class="label labelInputSelect" for="consent">I consent to being contacted by the team *</label>
+        </div>
+        <p class="form__error" id="consentErrorContainer"></p>
+      </div>
+
+      <button id="submitButton">Submit</button>
+    </form>
+  </div>
+  <script>
+    const validate = new window.JustValidate('#form');
+  </script>
+  <script src="./js/script.js"></script>
+</body>
+
+</html>

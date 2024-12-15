@@ -1,0 +1,160 @@
+#form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.form__group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form__group:first-child {
+  display: flex;
+  flex-direction: row;
+}
+
+.form__group1,
+.form__group2 {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.form__group:nth-child(5) div {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  align-items: center;
+}
+
+.input,
+.form__radio {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  padding-left: 18px;
+}
+
+textarea {
+  max-width: 32rem;
+  resize: none;
+  line-height: 1.3rem;
+  field-sizing: content;
+}
+
+#submitButton {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--btn-submit-color);
+  color: white;
+  cursor: pointer;
+  font-weight: var(--font-weight-bold);
+  margin-top: 15px;
+}
+
+#form__radio-group {
+  display: flex;
+  gap: 15px;
+}
+
+.label {
+  color: var(--border-color);
+  font-size: 0.88rem;
+  cursor: pointer;
+}
+
+.form__radio {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+#submitButton:hover {
+  background-color: hsl(169, 82%, 22%);
+}
+
+.input:hover,
+.input:focus,
+.valid {
+  border: 1px solid hsl(169, 73%, 42%);
+}
+
+.form__radio:hover {
+  border: 1px solid hsl(169, 73%, 42%);
+  cursor: pointer;
+}
+
+.form__radio:has(input[type="radio"]:checked) {
+  background-color: hsl(170, 63%, 84%);
+  border: 1px solid hsl(169, 73%, 42%);
+}
+
+.invalid {
+  border: 1px solid var(--error-color);
+}
+
+.form__error {
+  color: var(--error-color);
+  font-size: 0.88rem;
+}
+
+/* INPUT RADIO & CHECKBOX STYLES */
+
+.labelInputSelect {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.labelInputSelect::before {
+  content: "";
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  background-size: contain;
+  position: absolute;
+  left: -29px;
+}
+
+input[type="radio"]:checked + .labelInputSelect::before {
+  background-image: url(../assets/icon-radio-selected.svg);
+}
+
+input[type="checkbox"]:checked + .labelInputSelect::before {
+  background-image: url(../assets/icon-checkbox-check.svg);
+}
+
+input[type="radio"]:checked,
+input[type="checkbox"]:checked {
+  visibility: hidden;
+}
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 450px) {
+  .form__group:first-child {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #form__radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .form__radio {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+  }
+
+  textarea {
+    min-height: 10rem;
+  }
+}
